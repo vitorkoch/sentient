@@ -1,9 +1,9 @@
 <template>
 	<UPage>
 		<UPageBody>
-			<h1 class="text-3xl font-semibold text-center">
-				Daily Entry
-			</h1>
+			<UContainer>
+				<AddDailyEntry />
+			</UContainer>
 		</UPageBody>
 	</UPage>
 </template>

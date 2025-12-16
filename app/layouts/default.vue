@@ -1,12 +1,12 @@
 <template>
 	<div>
-		<UHeader title="Sentient" />
+		<AppHeader />
 
 		<UMain>
 			<slot />
 		</UMain>
 
 		<USeparator />
-		<UFooter> ViKoch © 2025 </UFooter>
+		<AppFooter />
 	</div>
 </template>

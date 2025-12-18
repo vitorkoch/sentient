@@ -3,7 +3,7 @@ name: checks
 on: push
 
 jobs:
-  deploy:
+  checks:
     runs-on: ubuntu-latest
 
     steps:

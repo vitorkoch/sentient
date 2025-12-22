@@ -3,7 +3,7 @@ import { moodSchema } from './mood'
 
 export const entrySchema = z.object({
 	mood: moodSchema,
-	date: z.date(),
+	date: z.iso.date(),
 })
 
 export type Entry = z.infer<typeof entrySchema>

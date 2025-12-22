@@ -9,6 +9,12 @@ export default defineNuxtConfig({
 		'@pinia/colada-nuxt',
 	],
 
+	runtimeConfig: {
+		database: {
+			url: '',
+		},
+	},
+
 	eslint: {
 		config: {
 			standalone: false,

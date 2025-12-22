@@ -1,21 +1,40 @@
 <script setup lang="ts">
 import type { Entry } from '#shared/schemas/entry'
+import { entrySchema } from '#shared/schemas/entry'
+import { resultHandlerFromZod } from '@vikoch/resultfier/zod'
+import { formatISO } from 'date-fns'
+
+const toast = useToast()
+const { $orpc } = useNuxtApp()
+
+const { mutateAsync: createEntry } = useMutation($orpc.entry.create.mutationOptions())
 
 const todayEntry = reactive<Partial<Entry>>({
 	mood: undefined,
-	date: new Date(),
+	date: formatISO(new Date(), {
+		representation: 'date',
+	}),
 })
 
 function entryMoodMatch(mood: Entry['mood']) {
 	return todayEntry.mood === mood
 }
 
-const toast = useToast()
-
 async function handleConfirm() {
-	return await Promise.try(() => {
-		toast.add({ title: 'Entrada salva', description: `Humor: ${todayEntry.mood}`, color: 'info' })
+	const parser = resultHandlerFromZod(entrySchema)
+	const result = parser(todayEntry)
+
+	if (result.isErr) {
+		toast.add({ title: 'Erro ao salvar nota diária', description: result.error.message, color: 'error' })
+		return
+	}
+
+	await createEntry({
+		date: result.value.date,
+		mood: result.value.mood,
 	})
+
+	toast.add({ title: 'Nota diária salva com sucesso', color: 'success' })
 }
 </script>
 

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { Entry } from '#shared/schemas/entry'
 import { entrySchema } from '#shared/schemas/entry'
-import { resultHandlerFromZod } from '@vikoch/resultfier/zod'
 import { formatISO } from 'date-fns'
+import { toAsyncResult } from 'resultfier'
 
 const toast = useToast()
 const { $orpc } = useNuxtApp()
@@ -21,17 +21,18 @@ function entryMoodMatch(mood: Entry['mood']) {
 }
 
 async function handleConfirm() {
-	const parser = resultHandlerFromZod(entrySchema)
-	const result = parser(todayEntry)
+	const result = await toAsyncResult(() => entrySchema.parse(todayEntry))
 
 	if (result.isErr) {
-		toast.add({ title: 'Erro ao salvar nota diária', description: result.error.message, color: 'error' })
+		toast.add({ title: 'Erro ao salvar nota diária', color: 'error' })
 		return
 	}
 
+	const { date, mood } = result.value
+
 	await createEntry({
-		date: result.value.date,
-		mood: result.value.mood,
+		date,
+		mood,
 	})
 
 	toast.add({ title: 'Nota diária salva com sucesso', color: 'success' })

@@ -1,50 +1,44 @@
-import { entryWithIdSchema } from '#shared/schemas/entry'
-import { resultHandlerFromZod } from '@vikoch/resultfier/zod'
-import { eq } from 'drizzle-orm'
+import { entryActions } from '~~/server/actions/entry'
 import { o } from '../context'
 
 export const entryRouter = {
 	list: o.entry.list.handler(async () => {
-		const { db } = useDb()
-		const entries = await db.query.entry.findMany()
+		const result = await entryActions.list()
 
-		const parser = resultHandlerFromZod(entryWithIdSchema.array())
-		const result = parser(entries)
+		if (result.isErr) {
+			throw result.error
+		}
 
-		return result.unwrap()
+		return result.value
 	}),
 
 	create: o.entry.create.handler(async ({ input }) => {
-		const { db, schema } = useDb()
+		const result = await entryActions.create(input)
 
-		const entry = await db.insert(schema.entry).values({
-			date: input.date,
-			mood: input.mood,
-		}).returning()
+		if (result.isErr) {
+			throw result.error
+		}
 
-		const parser = resultHandlerFromZod(entryWithIdSchema)
-		const result = parser(entry[0])
-
-		return result.unwrap()
+		return result.value
 	}),
 
 	find: o.entry.find.handler(async ({ input }) => {
-		const { db, schema } = useDb()
+		const result = await entryActions.findById({ id: input.id })
 
-		const entry = await db.query.entry.findFirst({
-			where: eq(schema.entry.id, input.id),
-		})
-		const parser = resultHandlerFromZod(entryWithIdSchema)
-		const result = parser(entry)
+		if (result.isErr) {
+			throw result.error
+		}
 
-		return result.unwrap()
+		return result.value
 	}),
 
 	delete: o.entry.delete.handler(async ({ input }) => {
-		const { db, schema } = useDb()
+		const result = await entryActions.delete({ id: input.id })
 
-		await db.delete(schema.entry).where(eq(schema.entry.id, input.id))
+		if (result.isErr) {
+			throw result.error
+		}
 
-		return undefined
+		return result.value
 	}),
 }

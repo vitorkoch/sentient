@@ -24,17 +24,17 @@ importers:
         specifier: 4.2.1
         version: 4.2.1(@babel/parser@7.28.5)(change-case@5.4.4)(db0@0.3.4(drizzle-orm@0.45.1(postgres@3.4.7)))(embla-carousel@8.6.0)(ioredis@5.8.2)(magicast@0.5.1)(typescript@5.9.3)(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)(yaml@2.8.2))(vue-router@4.6.4(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3))(zod@4.2.1)
       '@orpc/client':
-        specifier: ^1.13.0
-        version: 1.13.0
+        specifier: ^1.13.1
+        version: 1.13.1
       '@orpc/contract':
-        specifier: ^1.13.0
-        version: 1.13.0
+        specifier: ^1.13.1
+        version: 1.13.1
       '@orpc/server':
-        specifier: ^1.13.0
-        version: 1.13.0(crossws@0.3.5)(ws@8.18.3)
+        specifier: ^1.13.1
+        version: 1.13.1(crossws@0.3.5)(ws@8.18.3)
       '@orpc/vue-colada':
-        specifier: ^1.13.0
-        version: 1.13.0(@pinia/colada@0.20.0(pinia@3.0.4(typescript@5.9.3)(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3))
+        specifier: ^1.13.1
+        version: 1.13.1(@pinia/colada@0.20.0(pinia@3.0.4(typescript@5.9.3)(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3))
       '@pinia/colada':
         specifier: ^0.20.0
         version: 0.20.0(pinia@3.0.4(typescript@5.9.3)(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3))
@@ -44,9 +44,6 @@ importers:
       '@pinia/nuxt':
         specifier: 0.11.3
         version: 0.11.3(magicast@0.5.1)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.26(typescript@5.9.3)))
-      '@vikoch/resultfier':
-        specifier: jsr:^2.0.0
-        version: '@jsr/vikoch__resultfier@2.0.0'
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
@@ -65,6 +62,9 @@ importers:
       postgres:
         specifier: ^3.4.7
         version: 3.4.7
+      resultfier:
+        specifier: ^3.0.2
+        version: 3.0.2
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -951,9 +951,6 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@jsr/vikoch__resultfier@2.0.0':
-    resolution: {integrity: sha512-3AJB3Qy62Vr89nXNho1cMEe7nFx/WyZn3f7uVk9AG8EJ2Cy5UT8NqtsI3QMJ4GdcF5XPueNwHg3ut/NcPRmADA==, tarball: https://npm.jsr.io/~/11/@jsr/vikoch__resultfier/2.0.0.tgz}
-
   '@kwsites/file-exists@1.1.1':
     resolution: {integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==}
 
@@ -1110,17 +1107,17 @@ packages:
   '@nuxtjs/color-mode@3.5.2':
     resolution: {integrity: sha512-cC6RfgZh3guHBMLLjrBB2Uti5eUoGM9KyauOaYS9ETmxNWBMTvpgjvSiSJp1OFljIXPIqVTJ3xtJpSNZiO3ZaA==}
 
-  '@orpc/client@1.13.0':
-    resolution: {integrity: sha512-50MWjaQrz+eSSymmcJuzF+1mHSgObAKht0KpizA2+ZxpFpeyIYX1JGGvDPILYtHp7EyIOoN5ngwp7j/RHc7UeQ==}
+  '@orpc/client@1.13.1':
+    resolution: {integrity: sha512-m0v5HtBrgsq/L5UiPJQGPhpvGaSnoLJByWkH26wottSOEfMCaQHx4eC0q3MVP1Oy35Z8Id1bUXV03V4GsgbVVg==}
 
-  '@orpc/contract@1.13.0':
-    resolution: {integrity: sha512-lNzIuR1Ezcbo0AkavtnPVC1JKHwmVqzBPPCQsmTnwmF27lu+Ks/rDtgjAipN/7x0GOt0m6B7uALJHI5nEzGJGQ==}
+  '@orpc/contract@1.13.1':
+    resolution: {integrity: sha512-xITRv7Xy9Kk4Cd/urNv0a3BKBeGo6RcSyWFge53SIke/vEWnlnMXIE5gk3z+fqkWOQ4LvpSKGdJshj9BkfrtbA==}
 
-  '@orpc/interop@1.13.0':
-    resolution: {integrity: sha512-bVTef8NCGhDYPHVrx+/mn1Hnxm+99IVzjTT94dZsdGe4tB6+9Eb+ihYfhglu+z9bvskWVPHd68DNKKy/XgSPDA==}
+  '@orpc/interop@1.13.1':
+    resolution: {integrity: sha512-HLcKZOziLnfz5vkI6Rc6I3fe53QdVToI9zMWekE95LEWSZwAA35hNQsSG3QMLGlkH2PMO9TGhZbq9GsBwYfHYg==}
 
-  '@orpc/server@1.13.0':
-    resolution: {integrity: sha512-Bj/Kdp0RRQ4IZpmuKxpIXSmgcjTUUXE4CHkz9tX05CqoNV0Tdtw3Yz2WEbf5PLyg+3LlWs2+yVw4mCdeJTYLeg==}
+  '@orpc/server@1.13.1':
+    resolution: {integrity: sha512-e8AcsxWDC/93ip+U6/ZnFf7Kp+ND8+r54iPkZ4pIsUdUcU9RsECYnOQZtmg3x1maoKYs3I3Xl4feADk4F7RtLg==}
     peerDependencies:
       crossws: '>=0.3.4'
       ws: '>=8.18.1'
@@ -1130,39 +1127,39 @@ packages:
       ws:
         optional: true
 
-  '@orpc/shared@1.13.0':
-    resolution: {integrity: sha512-NHch9ug7fX2CJNDUXNGxPRgNWmMAdIVuWpaRL04NiVKRQ1xK17NPcRzjr01cPvEbX9qwEUlhB2USU6MXWJ47rw==}
+  '@orpc/shared@1.13.1':
+    resolution: {integrity: sha512-PJY1l9QxxXpojea/c1BgmP2owby19ZTi/l35O7N2GIAXmvQPSvDp/BBAZr4NS0NmRPDj7LQewXMEJc3hFSysEw==}
     peerDependencies:
       '@opentelemetry/api': '>=1.9.0'
     peerDependenciesMeta:
       '@opentelemetry/api':
         optional: true
 
-  '@orpc/standard-server-aws-lambda@1.13.0':
-    resolution: {integrity: sha512-tutin8RFliIMASUUI3H9AWho18NAl8GTIS7+olxAwsj6LYFelU+DBDm/eVSvWDzCCR73dFmbco+1QWByYnDstg==}
+  '@orpc/standard-server-aws-lambda@1.13.1':
+    resolution: {integrity: sha512-ObHPpWRXcnUD4ZF3WRFySS/RBOx4S7jtXUmQKP/VLAGgHbVUu3Q1z+epogqnJ4Qc65VfnLylGqvjZDqUK7E/UA==}
 
-  '@orpc/standard-server-fastify@1.13.0':
-    resolution: {integrity: sha512-2PCMA5QBtShgBLQYk4zS5qJPweNbgYGPlgyWycJ4t+ooKUkjWfoj15v00O72mWjWUjmOc88Z2RfqYIR7FItUHw==}
+  '@orpc/standard-server-fastify@1.13.1':
+    resolution: {integrity: sha512-2IJhmzk4PxRNJzITaxJ5BHfF9w9Y8xp1sX/kwj2sPE5eJsloqjFjlMRDVn1ttk7Ekc8I9YDliKfPdMiffBYFaA==}
     peerDependencies:
       fastify: '>=5.6.1'
     peerDependenciesMeta:
       fastify:
         optional: true
 
-  '@orpc/standard-server-fetch@1.13.0':
-    resolution: {integrity: sha512-g5rHY64YuDsuUIQm2en0uI9ioEErwE6sByGHZ1Plak/Y+g19sFZs44Y1AmstS5q5coE+oEudpwhYrUTLjyggwQ==}
+  '@orpc/standard-server-fetch@1.13.1':
+    resolution: {integrity: sha512-GQb2NYHFW4psOkRxNn95QGH6s0bmIudVaS9yRgCmxO3ydCVrJFdeNusz+Kd3BniCNyq4ourk2lcqw3cncqYotQ==}
 
-  '@orpc/standard-server-node@1.13.0':
-    resolution: {integrity: sha512-CSC9AKvf7XQZhmrDi3MYIS39hYvLRI0Z3d+Z/xplGiQAFPiInONypTAKYGFMSrlSJExxoqtwof3vmwGHrZJgXA==}
+  '@orpc/standard-server-node@1.13.1':
+    resolution: {integrity: sha512-W78jmof7A0/NyaCy8nef5NF4yQPVsAo4I1uuKHy+gDj+wAnC+C0LJ9blify/aWsM9UzAQeqXPYzDeISzv3FCRw==}
 
-  '@orpc/standard-server-peer@1.13.0':
-    resolution: {integrity: sha512-J8Z2Xl9CMAjxVPBZApBk3Pw46NAvUq/uDGFwR5udGt6Eq97w4Mz2uACvezpS13hn/r6CHDUQpErvmdAQ9AxN9A==}
+  '@orpc/standard-server-peer@1.13.1':
+    resolution: {integrity: sha512-wMxhTL4OjR76Tn+sLN//xj5ByTbwVW5nNJg9BjTbCPdeL0oy+DJk96Jwf402Rz9Yq2NkKuFNUDa1BijMvW7/Kw==}
 
-  '@orpc/standard-server@1.13.0':
-    resolution: {integrity: sha512-Sh+Vz8FiEkXJpaIERoUAe99GAK5xAN8dGl2SwkzAWm6QYex7pXVThaVOSuIG2X5UdYnkSehOB4e6/b3/lbiCNw==}
+  '@orpc/standard-server@1.13.1':
+    resolution: {integrity: sha512-iLv/oGyycXh4xIOG+oBIPwTENqIHVbb9wJMir3a74CSekaA1ErFqiCkRBSjOp/RFahxdGe7fUKAktw56RCWp9Q==}
 
-  '@orpc/vue-colada@1.13.0':
-    resolution: {integrity: sha512-8jiz8JyA80rmZu0Q0EFzlMbXnf7mAe1lB6bmKn2zF6LMa4zvM0a0Z4QZz/BAPt6tpBKTNDCVFIUCEHhYO+z5dw==}
+  '@orpc/vue-colada@1.13.1':
+    resolution: {integrity: sha512-ZkIuEssp/PncA6zHOHYRRuZYttBXZqzjxk2E2FPK9Dnql68DXK8buYCmCoe+oCk0pgmBXIpsCm9rXkLTGBYQMw==}
     peerDependencies:
       '@pinia/colada': '>=0.16.0'
       vue: '>=3.3.0'
@@ -4765,6 +4762,9 @@ packages:
   restructure@3.0.2:
     resolution: {integrity: sha512-gSfoiOEA0VPE6Tukkrr7I0RBdE0s7H1eFCDBk05l1KIQT1UIKNc5JZy6jdyW6eYH3aR3g5b3PuL77rq0hvwtAw==}
 
+  resultfier@3.0.2:
+    resolution: {integrity: sha512-47XPswVo6a6HRqq7oEC5bG1vhfVKpEIQIrszH/nbknT7lowCvxgG8wuhQ8Ej/cBJL7JeSXtbrlqfTmpIf/20nw==}
+
   reusify@1.1.0:
     resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
@@ -6304,10 +6304,6 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@jsr/vikoch__resultfier@2.0.0':
-    dependencies:
-      zod: 4.2.1
-
   '@kwsites/file-exists@1.1.1':
     dependencies:
       debug: 4.4.3
@@ -6889,38 +6885,38 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@orpc/client@1.13.0':
+  '@orpc/client@1.13.1':
     dependencies:
-      '@orpc/shared': 1.13.0
-      '@orpc/standard-server': 1.13.0
-      '@orpc/standard-server-fetch': 1.13.0
-      '@orpc/standard-server-peer': 1.13.0
+      '@orpc/shared': 1.13.1
+      '@orpc/standard-server': 1.13.1
+      '@orpc/standard-server-fetch': 1.13.1
+      '@orpc/standard-server-peer': 1.13.1
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
-  '@orpc/contract@1.13.0':
+  '@orpc/contract@1.13.1':
     dependencies:
-      '@orpc/client': 1.13.0
-      '@orpc/shared': 1.13.0
+      '@orpc/client': 1.13.1
+      '@orpc/shared': 1.13.1
       '@standard-schema/spec': 1.1.0
       openapi-types: 12.1.3
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
-  '@orpc/interop@1.13.0': {}
+  '@orpc/interop@1.13.1': {}
 
-  '@orpc/server@1.13.0(crossws@0.3.5)(ws@8.18.3)':
+  '@orpc/server@1.13.1(crossws@0.3.5)(ws@8.18.3)':
     dependencies:
-      '@orpc/client': 1.13.0
-      '@orpc/contract': 1.13.0
-      '@orpc/interop': 1.13.0
-      '@orpc/shared': 1.13.0
-      '@orpc/standard-server': 1.13.0
-      '@orpc/standard-server-aws-lambda': 1.13.0
-      '@orpc/standard-server-fastify': 1.13.0
-      '@orpc/standard-server-fetch': 1.13.0
-      '@orpc/standard-server-node': 1.13.0
-      '@orpc/standard-server-peer': 1.13.0
+      '@orpc/client': 1.13.1
+      '@orpc/contract': 1.13.1
+      '@orpc/interop': 1.13.1
+      '@orpc/shared': 1.13.1
+      '@orpc/standard-server': 1.13.1
+      '@orpc/standard-server-aws-lambda': 1.13.1
+      '@orpc/standard-server-fastify': 1.13.1
+      '@orpc/standard-server-fetch': 1.13.1
+      '@orpc/standard-server-node': 1.13.1
+      '@orpc/standard-server-peer': 1.13.1
       cookie: 1.1.1
     optionalDependencies:
       crossws: 0.3.5
@@ -6929,60 +6925,60 @@ snapshots:
       - '@opentelemetry/api'
       - fastify
 
-  '@orpc/shared@1.13.0':
+  '@orpc/shared@1.13.1':
     dependencies:
       radash: 12.1.1
       type-fest: 5.3.1
 
-  '@orpc/standard-server-aws-lambda@1.13.0':
+  '@orpc/standard-server-aws-lambda@1.13.1':
     dependencies:
-      '@orpc/shared': 1.13.0
-      '@orpc/standard-server': 1.13.0
-      '@orpc/standard-server-fetch': 1.13.0
-      '@orpc/standard-server-node': 1.13.0
+      '@orpc/shared': 1.13.1
+      '@orpc/standard-server': 1.13.1
+      '@orpc/standard-server-fetch': 1.13.1
+      '@orpc/standard-server-node': 1.13.1
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
-  '@orpc/standard-server-fastify@1.13.0':
+  '@orpc/standard-server-fastify@1.13.1':
     dependencies:
-      '@orpc/shared': 1.13.0
-      '@orpc/standard-server': 1.13.0
-      '@orpc/standard-server-node': 1.13.0
+      '@orpc/shared': 1.13.1
+      '@orpc/standard-server': 1.13.1
+      '@orpc/standard-server-node': 1.13.1
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
-  '@orpc/standard-server-fetch@1.13.0':
+  '@orpc/standard-server-fetch@1.13.1':
     dependencies:
-      '@orpc/shared': 1.13.0
-      '@orpc/standard-server': 1.13.0
+      '@orpc/shared': 1.13.1
+      '@orpc/standard-server': 1.13.1
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
-  '@orpc/standard-server-node@1.13.0':
+  '@orpc/standard-server-node@1.13.1':
     dependencies:
-      '@orpc/shared': 1.13.0
-      '@orpc/standard-server': 1.13.0
-      '@orpc/standard-server-fetch': 1.13.0
+      '@orpc/shared': 1.13.1
+      '@orpc/standard-server': 1.13.1
+      '@orpc/standard-server-fetch': 1.13.1
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
-  '@orpc/standard-server-peer@1.13.0':
+  '@orpc/standard-server-peer@1.13.1':
     dependencies:
-      '@orpc/shared': 1.13.0
-      '@orpc/standard-server': 1.13.0
+      '@orpc/shared': 1.13.1
+      '@orpc/standard-server': 1.13.1
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
-  '@orpc/standard-server@1.13.0':
+  '@orpc/standard-server@1.13.1':
     dependencies:
-      '@orpc/shared': 1.13.0
+      '@orpc/shared': 1.13.1
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
-  '@orpc/vue-colada@1.13.0(@pinia/colada@0.20.0(pinia@3.0.4(typescript@5.9.3)(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3))':
+  '@orpc/vue-colada@1.13.1(@pinia/colada@0.20.0(pinia@3.0.4(typescript@5.9.3)(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3))':
     dependencies:
-      '@orpc/client': 1.13.0
-      '@orpc/shared': 1.13.0
+      '@orpc/client': 1.13.1
+      '@orpc/shared': 1.13.1
       '@pinia/colada': 0.20.0(pinia@3.0.4(typescript@5.9.3)(vue@3.5.26(typescript@5.9.3)))(vue@3.5.26(typescript@5.9.3))
       vue: 3.5.26(typescript@5.9.3)
     transitivePeerDependencies:
@@ -10742,6 +10738,8 @@ snapshots:
       supports-preserve-symlinks-flag: 1.0.0
 
   restructure@3.0.2: {}
+
+  resultfier@3.0.2: {}
 
   reusify@1.1.0: {}
 

@@ -5,7 +5,7 @@ export const entryContract = {
 	list: oc.output(entryWithIdSchema.array()),
 
 	find: oc.input(entryWithIdSchema.pick({ id: true }))
-		.output(entryWithIdSchema),
+		.output(entryWithIdSchema.nullable()),
 
 	create: oc.input(entryWithIdSchema.omit({ id: true })).output(entryWithIdSchema),
 

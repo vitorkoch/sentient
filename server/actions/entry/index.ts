@@ -1,6 +1,7 @@
 import type { Entry, EntryWithId } from '#shared/schemas/entry'
 import type { AsyncAction } from 'resultfier/action'
 import { entryWithIdSchema } from '#shared/schemas/entry'
+import { useDb } from '@@/server/utils/useDb'
 import { eq } from 'drizzle-orm'
 import { ok, toAsyncResult } from 'resultfier'
 

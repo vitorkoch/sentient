@@ -2,8 +2,17 @@ export default defineNuxtConfig({
 	compatibilityDate: '2025-07-15',
 	css: ['@/assets/styles/main.css'],
 
-	ui: {
-		colorMode: false,
+	modules: [
+		'@nuxt/ui',
+		'@nuxt/eslint',
+		'@pinia/nuxt',
+		'@pinia/colada-nuxt',
+	],
+
+	runtimeConfig: {
+		database: {
+			url: '',
+		},
 	},
 
 	eslint: {
@@ -11,6 +20,4 @@ export default defineNuxtConfig({
 			standalone: false,
 		},
 	},
-
-	modules: ['@nuxt/ui', '@nuxt/eslint'],
 })

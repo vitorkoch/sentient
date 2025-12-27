@@ -61,23 +61,23 @@ async function handleConfirm() {
 		<div class="grid grid-cols-5 place-items-center my-10 gap-2">
 			<div class="size-full rounded-lg ring text-error flex flex-col items-center justify-center gap-1 aspect-square transition-all duration-300 p-1" :class="[entryMoodMatch('veryBad') ? 'bg-error/10 ring-error/20' : 'bg-transparent ring-transparent']" @click="todayEntry.mood = 'veryBad'">
 				<UIcon :name="moodIcons.veryBad" class="size-full" />
-				<div>Péssimo</div>
+				<div>{{ $t('mood.veryBad') }}</div>
 			</div>
 			<div class="size-full rounded-lg ring text-warning flex flex-col items-center justify-center gap-1 aspect-square transition-all duration-300 p-1" :class="[entryMoodMatch('bad') ? 'bg-warning/10 ring-warning/20' : 'bg-transparent ring-transparent']" @click="todayEntry.mood = 'bad'">
 				<UIcon :name="moodIcons.bad" class="size-full" />
-				<div>Mal</div>
+				<div>{{ $t('mood.bad') }}</div>
 			</div>
 			<div class="size-full rounded-lg ring text-default flex flex-col items-center justify-center gap-1 aspect-square transition-all duration-300 p-1" :class="[entryMoodMatch('neutral') ? 'bg-black/10 ring-black/20' : 'bg-transparent ring-transparent']" @click="todayEntry.mood = 'neutral'">
 				<UIcon :name="moodIcons.neutral" class="size-full" />
-				<div>Ok</div>
+				<div>{{ $t('mood.neutral') }}</div>
 			</div>
 			<div class="size-full rounded-lg ring text-info flex flex-col items-center justify-center gap-1 aspect-square transition-all duration-300 p-1" :class="[entryMoodMatch('good') ? 'bg-info/10 ring-info/20' : 'bg-transparent ring-transparent']" @click="todayEntry.mood = 'good'">
 				<UIcon :name="moodIcons.good" class="size-full" />
-				<div>Bom</div>
+				<div>{{ $t('mood.good') }}</div>
 			</div>
 			<div class="size-full rounded-lg ring text-success flex flex-col items-center justify-center gap-1 aspect-square transition-all duration-300 p-1" :class="[entryMoodMatch('great') ? 'bg-success/10 ring-success/20' : 'bg-transparent ring-transparent']" @click="todayEntry.mood = 'great'">
 				<UIcon :name="moodIcons.great" class="size-full" />
-				<div>Ótimo</div>
+				<div>{{ $t('mood.great') }}</div>
 			</div>
 		</div>
 

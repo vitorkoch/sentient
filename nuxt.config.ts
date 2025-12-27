@@ -7,7 +7,15 @@ export default defineNuxtConfig({
 		'@nuxt/eslint',
 		'@pinia/nuxt',
 		'@pinia/colada-nuxt',
+		'@nuxtjs/i18n',
 	],
+
+	i18n: {
+		defaultLocale: 'pt-br',
+		locales: [
+			{ code: 'pt-br', name: 'Português (Brasil)', file: 'pt-br.json' },
+		],
+	},
 
 	runtimeConfig: {
 		database: {

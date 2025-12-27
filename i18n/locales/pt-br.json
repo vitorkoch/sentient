@@ -1,0 +1,9 @@
+{
+	"mood": {
+		"veryBad": "Péssimo",
+		"bad": "Ruim",
+		"neutral": "Ok",
+		"good": "Bem",
+		"great": "Ótimo"
+	}
+}

@@ -16,7 +16,9 @@ export interface EntryActions {
 export const entryActions: EntryActions = {
 	async list() {
 		const { db } = useDb()
-		const entries = await db.query.entry.findMany()
+		const entries = await db.query.entry.findMany({
+			orderBy: (entry, { desc }) => [desc(entry.date)],
+		})
 
 		const result = await toAsyncResult(() => entryWithIdSchema.array().parse(entries))
 

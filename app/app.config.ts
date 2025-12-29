@@ -19,13 +19,82 @@ const moodColors: Record<Mood, string> = {
 export default defineAppConfig({
 	moodIcons,
 	moodColors,
+
 	icon: {
 		aliases: moodIcons,
 	},
+
 	ui: {
 		colors: {
-			primary: 'slate',
-			neutral: 'zinc',
+			neutral: 'slate',
+		},
+
+		header: {
+			slots: {
+				root: 'shadow-sm',
+			},
+		},
+
+		footer: {
+			slots: {
+				root: 'shadow-sm',
+			},
+		},
+
+		card: {
+			slots: {
+				root: 'shadow',
+			},
+			defaultVariants: {
+				variant: 'subtle',
+			},
+		},
+
+		pageCard: {
+			slots: {
+				root: 'shadow',
+			},
+			defaultVariants: {
+				variant: 'subtle',
+			},
+		},
+
+		empty: {
+			slots: {
+				root: 'shadow',
+			},
+			defaultVariants: {
+				variant: 'subtle',
+			},
+		},
+
+		button: {
+			slots: {
+				base: 'shadow ring ring-default',
+			},
+			defaultVariants: {
+				variant: 'subtle',
+				color: 'neutral',
+				size: 'lg',
+			},
+		},
+
+		badge: {
+			slots: {
+				base: 'shadow',
+			},
+			defaultVariants: {
+				variant: 'subtle',
+			},
+		},
+
+		selectMenu: {
+			slots: {
+				base: 'shadow',
+			},
+			defaultVariants: {
+				variant: 'subtle',
+			},
 		},
 
 		icons: {
@@ -71,27 +140,6 @@ export default defineAppConfig({
 			tip: 'tabler:bulb',
 			upload: 'tabler:upload',
 			warning: 'tabler:alert-triangle',
-		},
-
-		header: {
-			slots: {
-				root: 'shadow-sm',
-			},
-		},
-
-		footer: {
-			slots: {
-				root: 'shadow-sm',
-			},
-		},
-
-		card: {
-			slots: {
-				root: 'shadow',
-			},
-			defaultVariants: {
-				variant: 'subtle',
-			},
 		},
 	},
 })

@@ -22,8 +22,18 @@ export const entryRouter = {
 		return result.value
 	}),
 
-	find: o.entry.find.handler(async ({ input }) => {
+	findById: o.entry.findById.handler(async ({ input }) => {
 		const result = await entryActions.findById({ id: input.id })
+
+		if (result.isErr) {
+			throw result.error
+		}
+
+		return result.value
+	}),
+
+	findByDate: o.entry.findByDate.handler(async ({ input }) => {
+		const result = await entryActions.findByDate({ date: input.date })
 
 		if (result.isErr) {
 			throw result.error

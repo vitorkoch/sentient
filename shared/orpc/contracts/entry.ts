@@ -4,7 +4,10 @@ import { oc } from '@orpc/contract'
 export const entryContract = {
 	list: oc.output(entryWithIdSchema.array()),
 
-	find: oc.input(entryWithIdSchema.pick({ id: true }))
+	findById: oc.input(entryWithIdSchema.pick({ id: true }))
+		.output(entryWithIdSchema.nullable()),
+
+	findByDate: oc.input(entryWithIdSchema.pick({ date: true }))
 		.output(entryWithIdSchema.nullable()),
 
 	create: oc.input(entryWithIdSchema.omit({ id: true })).output(entryWithIdSchema),

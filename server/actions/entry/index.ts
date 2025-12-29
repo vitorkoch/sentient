@@ -30,6 +30,10 @@ export const entryActions: EntryActions = {
 			where: eq(schema.entry.id, id),
 		})
 
+		if (!entry) {
+			return ok(null)
+		}
+
 		const result = await toAsyncResult(() => entryWithIdSchema.parse(entry))
 
 		return result
@@ -41,6 +45,10 @@ export const entryActions: EntryActions = {
 		const entry = await db.query.entry.findFirst({
 			where: eq(schema.entry.date, date),
 		})
+
+		if (!entry) {
+			return ok(null)
+		}
 
 		const result = await toAsyncResult(() => entryWithIdSchema.parse(entry))
 

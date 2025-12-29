@@ -1,31 +1,35 @@
 export default defineNuxtConfig({
-	compatibilityDate: '2025-07-15',
-	css: ['@/assets/styles/main.css'],
+ compatibilityDate: '2025-07-15',
+ css: ['@/assets/styles/main.css'],
 
-	modules: [
-		'@nuxt/ui',
-		'@nuxt/eslint',
-		'@pinia/nuxt',
-		'@pinia/colada-nuxt',
-		'@nuxtjs/i18n',
+ modules: [
+					'@nuxt/ui',
+					'@nuxt/eslint',
+					'@pinia/nuxt',
+					'@pinia/colada-nuxt',
+					'@nuxtjs/i18n',
 	],
 
-	i18n: {
-		defaultLocale: 'pt-br',
-		locales: [
-			{ code: 'pt-br', name: 'Português (Brasil)', file: 'pt-br.json' },
-		],
+ i18n: {
+					defaultLocale: 'pt-br',
+					locales: [
+									{ code: 'pt-br', name: 'Português (Brasil)', file: 'pt-br.json' },
+					],
 	},
 
-	runtimeConfig: {
-		database: {
-			url: '',
-		},
+ runtimeConfig: {
+					database: {
+									url: '',
+					},
 	},
 
-	eslint: {
-		config: {
-			standalone: false,
-		},
+ eslint: {
+					config: {
+									standalone: false,
+					},
+	},
+
+ devtools: {
+	 enabled: true,
 	},
 })

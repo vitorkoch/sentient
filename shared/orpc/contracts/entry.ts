@@ -1,16 +1,16 @@
-import { entryWithIdSchema } from '#shared/schemas/entry'
+import { entrySchema } from '#shared/schemas/entry'
 import { oc } from '@orpc/contract'
 
 export const entryContract = {
-	list: oc.output(entryWithIdSchema.array()),
+	list: oc.output(entrySchema.array()),
 
-	findById: oc.input(entryWithIdSchema.pick({ id: true }))
-		.output(entryWithIdSchema.nullable()),
+	findById: oc.input(entrySchema.pick({ id: true }))
+		.output(entrySchema.nullable()),
 
-	findByDate: oc.input(entryWithIdSchema.pick({ date: true }))
-		.output(entryWithIdSchema.nullable()),
+	findByDate: oc.input(entrySchema.pick({ date: true }))
+		.output(entrySchema.nullable()),
 
-	create: oc.input(entryWithIdSchema.omit({ id: true })).output(entryWithIdSchema),
+	create: oc.input(entrySchema.omit({ id: true })).output(entrySchema),
 
-	delete: oc.input(entryWithIdSchema.pick({ id: true })),
+	delete: oc.input(entrySchema.pick({ id: true })),
 }

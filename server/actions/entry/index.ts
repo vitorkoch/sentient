@@ -1,16 +1,16 @@
-import type { Entry, EntryWithId } from '#shared/schemas/entry'
+import type { Entry } from '#shared/schemas/entry'
 import type { AsyncAction } from 'resultfier/action'
-import { entryWithIdSchema } from '#shared/schemas/entry'
+import { entrySchema } from '#shared/schemas/entry'
 import { useDb } from '@@/server/utils/useDb'
 import { eq } from 'drizzle-orm'
 import { ok, toAsyncResult } from 'resultfier'
 
 export interface EntryActions {
-	list: AsyncAction<EntryWithId[], unknown>
-	findById: AsyncAction<EntryWithId | null, unknown, { id: EntryWithId['id'] }>
-	findByDate: AsyncAction<EntryWithId | null, unknown, { date: EntryWithId['date'] }>
-	create: AsyncAction<EntryWithId, unknown, Entry>
-	delete: AsyncAction<void, unknown, { id: EntryWithId['id'] }>
+	list: AsyncAction<Entry[], unknown>
+	findById: AsyncAction<Entry | null, unknown, { id: Entry['id'] }>
+	findByDate: AsyncAction<Entry | null, unknown, { date: Entry['date'] }>
+	create: AsyncAction<Entry, unknown, Omit<Entry, 'id'>>
+	delete: AsyncAction<void, unknown, { id: Entry['id'] }>
 }
 
 export const entryActions: EntryActions = {
@@ -20,7 +20,7 @@ export const entryActions: EntryActions = {
 			orderBy: (entry, { desc }) => [desc(entry.date)],
 		})
 
-		const result = await toAsyncResult(() => entryWithIdSchema.array().parse(entries))
+		const result = await toAsyncResult(() => entrySchema.array().parse(entries))
 
 		return result
 	},
@@ -36,7 +36,7 @@ export const entryActions: EntryActions = {
 			return ok(null)
 		}
 
-		const result = await toAsyncResult(() => entryWithIdSchema.parse(entry))
+		const result = await toAsyncResult(() => entrySchema.parse(entry))
 
 		return result
 	},
@@ -52,7 +52,7 @@ export const entryActions: EntryActions = {
 			return ok(null)
 		}
 
-		const result = await toAsyncResult(() => entryWithIdSchema.parse(entry))
+		const result = await toAsyncResult(() => entrySchema.parse(entry))
 
 		return result
 	},
@@ -73,7 +73,7 @@ export const entryActions: EntryActions = {
 			mood,
 		}).returning()
 
-		const result = await toAsyncResult(() => entryWithIdSchema.parse(entry[0]))
+		const result = await toAsyncResult(() => entrySchema.parse(entry[0]))
 
 		return result
 	},

@@ -36,7 +36,6 @@
 		"postgres": "^3.4.7",
 		"resultfier": "^3.0.2",
 		"typescript": "^5.9.3",
-		"uuidv7": "^1.1.0",
 		"vue": "^3.5.26",
 		"vue-router": "^4.6.4",
 		"zod": "^4.2.1"

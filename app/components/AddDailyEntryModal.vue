@@ -31,7 +31,7 @@ function entryMoodMatch(mood: Entry['mood']) {
 }
 
 async function handleConfirm() {
-	const result = await toAsyncResult(() => entrySchema.parse(todayEntry))
+	const result = await toAsyncResult(() => entrySchema.omit({ id: true }).parse(todayEntry))
 
 	if (result.isErr) {
 		toast.add({ title: 'Erro ao salvar nota diária', color: 'error' })

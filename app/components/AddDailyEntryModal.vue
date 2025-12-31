@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Entry } from '#shared/schemas/entry'
 import { entrySchema } from '#shared/schemas/entry'
-import { formatISO } from 'date-fns'
+import { getIsoDateString } from '#shared/utils/date'
 import { toAsyncResult } from 'resultfier'
 
 const emit = defineEmits(['update:open'])
@@ -21,9 +21,7 @@ const { mutateAsync: createEntry } = useMutation($orpc.entry.create.mutationOpti
 
 const todayEntry = reactive<Partial<Entry>>({
 	mood: undefined,
-	date: formatISO(new Date(), {
-		representation: 'date',
-	}),
+	date: getIsoDateString(new Date()),
 })
 
 function entryMoodMatch(mood: Entry['mood']) {

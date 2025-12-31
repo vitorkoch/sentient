@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { LazyAddDailyEntryModal } from '#components'
-import { formatISO } from 'date-fns'
+import { getIsoDateString } from '#shared/utils/date'
 
 const overlay = useOverlay()
 
@@ -14,9 +14,7 @@ const { $orpc } = useNuxtApp()
 
 const { state: todayDateState } = useQuery($orpc.entry.findByDate.queryOptions({
 	input: {
-		date: formatISO(new Date(), {
-			representation: 'date',
-		}),
+		date: getIsoDateString(new Date()),
 	},
 }))
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { formatDate, parseISO } from 'date-fns'
+import { getDateByIsoDateString } from '#shared/utils/date'
 
 const { $orpc } = useNuxtApp()
 
@@ -22,7 +22,7 @@ const { state: entriesState } = useQuery($orpc.entry.list.queryOptions())
 
 		<template v-else>
 			<UPageGrid>
-				<UPageCard v-for="entry in entriesState.data" :key="entry.id" :title="formatDate(parseISO(entry.date), 'dd/MM/yyyy')" :description="$t(`mood.${entry.mood}`)" :icon="entry.mood" />
+				<UPageCard v-for="entry in entriesState.data" :key="entry.id" :title="getDateByIsoDateString(entry.date).toLocaleDateString()" :description="$t(`mood.${entry.mood}`)" :icon="entry.mood" />
 			</UPageGrid>
 		</template>
 	</div>
